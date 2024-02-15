@@ -65,9 +65,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function callFakeApi() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+    await fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then((response) => response.json())
       .then((json) => console.log(json));
   }
+
+  // async function callFakeApi() {
+  //   let url1 = "https://pokeapi.co/api/v2/pokemon?limit=150";
+  //   let url2 = "https://jsonplaceholder.typicode.com/todos/1";
+
+  //   try {
+  //     const responses = await Promise.all([fetch(url1), fetch(url2)]);
+  //     const jsonResponses = await Promise.all(
+  //       responses.map((response) => response.json())
+  //     );
+
+  //     console.log(jsonResponses);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // }
   // *** *** *** ***
 });
