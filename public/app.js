@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = document.querySelector(".post-req > button");
   const updateButton = document.querySelector(".patch-req > button");
   const deleteButton = document.querySelector(".delete-req > button");
+  const externalApiButton = document.querySelector(".external-api > button");
   // *** *** *** ***
 
   // *** EVENT HANDLERS ***
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   submitButton.addEventListener("click", () => postText());
   updateButton.addEventListener("click", () => patchText());
   deleteButton.addEventListener("click", () => deleteText());
+  externalApiButton.addEventListener("click", () => callFakeApi());
   // *** *** *** ***
 
   // *** API ***
@@ -60,6 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       console.log({ error });
     }
+  }
+
+  async function callFakeApi() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   }
   // *** *** *** ***
 });
