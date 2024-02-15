@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+    <title>HTTP Request Demo</title>
+  </head>
+  <body style="padding: 3rem 2rem">
+    <h1>HTTP Request Demo</h1>
+
+    <div style="margin: 1rem 0 2rem" class="get-req">
+      <h3>*** GET ***</h3>
+      <p style="display: inline">Requested Data: <span>________</span></p>
+      <button>GET test</button>
+    </div>
+
+    <div style="margin: 1rem 0 2rem" class="post-req">
+      <h3>*** POST ***</h3>
+      <label for="post-req-input">Enter some text:</label>
+      <input type="text" name="post-req-input" />
+      <button>Submit</button>
+    </div>
+
+    <div style="margin: 1rem 0 2rem" class="patch-req">
+      <h3>*** PATCH ***</h3>
+      <label for="patch-req-input">Enter some text:</label>
+      <input type="text" name="patch-req-input" />
+      <button>Update</button>
+    </div>
+
+    <div style="margin: 1rem 0 2rem" class="delete-req">
+      <h3>*** DELETE ***</h3>
+      <button>Erase</button>
+    </div>
+  </body>
+</html>
