@@ -24,7 +24,6 @@ app.get("/get-text", async (req, res) => {
   try {
     storedText ||= "________";
     console.log({ expressGET: storedText });
-    console.log("JK");
 
     res.send({ storedText });
   } catch (error) {
