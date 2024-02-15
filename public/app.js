@@ -1,19 +1,19 @@
-// This will act as the API layer
-// aka: a place for http request services
 document.addEventListener("DOMContentLoaded", () => {
-  // Query buttons
+  // *** QUERY ELEMENTS ***
   const getButton = document.querySelector(".get-req > button");
   const submitButton = document.querySelector(".post-req > button");
   const updateButton = document.querySelector(".patch-req > button");
   const deleteButton = document.querySelector(".delete-req > button");
+  // *** *** *** ***
 
-  // Add click events
+  // *** EVENT HANDLERS ***
   getButton.addEventListener("click", () => getText());
   submitButton.addEventListener("click", () => postText());
   updateButton.addEventListener("click", () => patchText());
   deleteButton.addEventListener("click", () => deleteText());
+  // *** *** *** ***
 
-  // Functions
+  // *** API ***
   async function getText() {
     const spanText = document.querySelector(".get-req > p > span");
     try {
@@ -56,10 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await axios.delete("/delete-text");
       console.log({ axiosDELETE: response.data });
 
-      // reset text content
       spanText.textContent = response.data.storedText;
     } catch (error) {
       console.log({ error });
     }
   }
+  // *** *** *** ***
 });

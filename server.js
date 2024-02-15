@@ -1,25 +1,24 @@
 // This is where the routes are defined and how they are handled
 // TODO: A step further to take would be to attatch a database but we'll use a fake db for now ln:12
 const express = require("express");
-const path = require("path");
 
 const app = express();
 const PORT = 3000;
 
-app.use(express.static(path.join(__dirname)));
+// *** SERVE FILES FROM:  ***
+app.use(express.static("public"));
+// *** *** *** ***
+
+// *** BODY PARSER ***
 app.use(express.json());
+// *** *** *** ***
 
 // *** FAKE DB ***
 // This will act as the single item in a fictional database
 let storedText = null;
 // *** *** *** ***
 
-// Deliver index.html to PORT
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
-
-// GET
+// *** ROUTES ***
 app.get("/get-text", async (req, res) => {
   try {
     storedText ||= "________";
@@ -31,7 +30,6 @@ app.get("/get-text", async (req, res) => {
   }
 });
 
-// POST
 app.post("/post-text", async (req, res) => {
   try {
     storedText = req.body.inputValue;
@@ -44,7 +42,6 @@ app.post("/post-text", async (req, res) => {
   }
 });
 
-// PATCH
 app.patch("/patch-text", async (req, res) => {
   try {
     storedText = req.body.inputValue;
@@ -57,7 +54,6 @@ app.patch("/patch-text", async (req, res) => {
   }
 });
 
-// DELETE
 app.delete("/delete-text", async (req, res) => {
   try {
     storedText = "________";
@@ -69,8 +65,10 @@ app.delete("/delete-text", async (req, res) => {
     res.status(500).send("External server error");
   }
 });
+// *** *** *** ***
 
-// PORT
+// *** PORT ***
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
+// *** *** *** ***
