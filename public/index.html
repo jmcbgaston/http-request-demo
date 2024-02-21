@@ -6,38 +6,60 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
     <title>HTTP Request Demo</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./app.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body style="padding: 2rem">
-    <h1>HTTP Request Demo</h1>
+    <header>
+      <h1>HTTP Request Demo</h1>
+      <p>
+        This is a simple application that demonstrates the fundementals of RESTful
+        Api
+      </p>
+    </header>
 
-    <div style="margin: 1rem 0 2rem" class="get-req">
-      <h3>*** GET ***</h3>
-      <p style="display: inline">Requested Data: <span>________</span></p>
-      <button>GET test</button>
+    <main>
+      <div style="margin: 1rem 0 2rem" class="get-req">
+        <h3 class="title">GET</h3>
+        <p style="display: inline">Requested Data: <span>________</span></p>
+        <button>Fetch</button>
+        <p class="message"></p>
+      </div>
+  
+      <div style="margin: 1rem 0 2rem" class="post-req">
+        <h3 class="title">POST</h3>
+        <label for="post-req-input">Enter some text:</label>
+        <input type="text" name="post-req-input" />
+        <button>Submit</button>
+        <p class="message"></p>
+      </div>
+  
+      <div style="margin: 1rem 0 2rem" class="patch-req">
+        <h3 class="title">PATCH</h3>
+        <label for="patch-req-input">Enter some text:</label>
+        <input type="text" name="patch-req-input" />
+        <button>Update</button>
+        <p class="message"></p>
+      </div>
+  
+      <div style="margin: 1rem 0 2rem" class="delete-req">
+        <h3 class="title">DELETE</h3>
+        <button>Delete</button>
+        <p class="message"></p>
+      </div>
     </div>
 
-    <div style="margin: 1rem 0 2rem" class="post-req">
-      <h3>*** POST ***</h3>
-      <label for="post-req-input">Enter some text:</label>
-      <input type="text" name="post-req-input" />
-      <button>Submit</button>
-    </div>
-
-    <div style="margin: 1rem 0 2rem" class="patch-req">
-      <h3>*** PATCH ***</h3>
-      <label for="patch-req-input">Enter some text:</label>
-      <input type="text" name="patch-req-input" />
-      <button>Update</button>
-    </div>
-
-    <div style="margin: 1rem 0 2rem" class="delete-req">
-      <h3>*** DELETE ***</h3>
-      <button>Erase</button>
-    </div>
-
-    <div style="margin: 1rem 0 2rem" class="external-api">
-      <h3>*** External API ***</h3>
+    <!-- <div style="margin: 1rem 0 2rem" class="external-api">
+      <h3 class="title">External API</h3>
       <button>Call API</button>
-    </div>
+      <p class="message"></p>
+    </div> -->
   </body>
 </html>
