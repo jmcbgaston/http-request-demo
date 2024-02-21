@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       element.style["visibility"] = "hidden";
       element.textContent = "";
-    }, 5000);
+    }, 3000);
   }
 
   // *** API ***
