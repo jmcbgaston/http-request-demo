@@ -19,6 +19,10 @@ let storedText = null;
 // *** *** *** ***
 
 // *** ROUTES ***
+app.get("/", async (req, res) => {
+  res.sendFile(__dirname, "public", "index.html");
+});
+
 app.get("/get-text", async (req, res) => {
   try {
     storedText ||= "________";
