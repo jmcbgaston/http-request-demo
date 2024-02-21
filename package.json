@@ -1,14 +1,13 @@
 {
   "name": "send-value-to-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "HTTP Request Demo",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node server.js"
+    "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "jmcbgaston",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.7",
